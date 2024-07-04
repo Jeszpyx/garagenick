@@ -14,6 +14,7 @@ async function main() {
       transform: true
     }),
   );
+  app.enableShutdownHooks()
   
   const configService = app.get(ApiConfigService);
   const port = configService.get('PORT');
