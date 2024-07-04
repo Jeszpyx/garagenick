@@ -1,4 +1,5 @@
-import { IsEnum, IsNumber, Min, Max, IsString, IsUrl } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsEnum, IsNumber, Min, Max, IsString, IsUrl, ValidateNested, IsDefined } from 'class-validator';
 
 enum Environment {
   Development = 'development',
@@ -16,7 +17,9 @@ export class ApiConfig {
   @IsNumber()
   PORT: number;
 
+  @IsString()
+  APP_URL: string;
 
   @IsString()
-  HOST_URL: string
+  DATABASE_URL: string;
 }
